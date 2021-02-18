@@ -1,6 +1,7 @@
 package com.saron.productMicroservice.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +10,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "product")
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class Product {
 
@@ -22,7 +22,10 @@ public class Product {
     private String productName;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "depat_id", nullable = false)
+    @JoinColumn(name = "dept_id", nullable = false)
     private Department department;
 
+    public Product(long l, String long_sleeves, int i, String shirts) {
+
+    }
 }
